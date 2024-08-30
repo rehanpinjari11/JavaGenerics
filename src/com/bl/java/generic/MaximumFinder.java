@@ -20,9 +20,27 @@ public class MaximumFinder {
 
     }
 
+    // Method to find the maximum of three floats
     public static float findMaximum(Float x, Float y, Float z)
     {
         float max = x;
+
+        if(y.compareTo(max) > 0)
+        {
+            max = y;
+        }
+        if(z.compareTo(max) > 0)
+        {
+            max = z;
+        }
+
+        return max;
+    }
+
+    // Method to find the maximum of three Strings
+    public static String findMaximum(String x, String y, String z)
+    {
+        String max = x;
 
         if(y.compareTo(max) > 0)
         {
@@ -43,10 +61,12 @@ public class MaximumFinder {
         // Test Case
         Integer maxInt = findMaximum(10, 5, 2);
         float maxFloat = findMaximum(6.5f, 8.4f, 12.3f);
+        String maxString = findMaximum("Apple", "Peach", "Banana");
 
         // Print Result
         System.out.println("Maximum Number is: " + maxInt); // Expected: 10
         System.out.println("Maximum Number is: " + maxFloat); // Expected 12.3
+        System.out.println("Maximum String is: " + maxString); // Expected Peach
 
     }
 
