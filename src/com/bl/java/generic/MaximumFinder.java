@@ -2,53 +2,18 @@ package com.bl.java.generic;
 
 public class MaximumFinder {
 
-    // Method to find the maximum of three integers
-    public static Integer findMaximum(Integer x, Integer y, Integer z)
+    // Generic method to find the maximum of three comparable objects
+
+    public static <T extends Comparable<T>> T findMaximum(T x, T y, T z)
     {
-        Integer max = x; // Assume x is a Maximum
+        T max = x;  // Assume x is the maximum
 
-        if(y.compareTo(max) > 0)
-        {
-            max = y; // y is the Maximum
-        }
-        if(z.compareTo(max) > 0)
-        {
-            max = z; // z is the Maximum
+        if (y.compareTo(max) > 0) {
+            max = y;  // y is the new maximum
         }
 
-        return max; // return the maximum number found
-
-    }
-
-    // Method to find the maximum of three floats
-    public static float findMaximum(Float x, Float y, Float z)
-    {
-        float max = x;
-
-        if(y.compareTo(max) > 0)
-        {
-            max = y;
-        }
-        if(z.compareTo(max) > 0)
-        {
-            max = z;
-        }
-
-        return max;
-    }
-
-    // Method to find the maximum of three Strings
-    public static String findMaximum(String x, String y, String z)
-    {
-        String max = x;
-
-        if(y.compareTo(max) > 0)
-        {
-            max = y;
-        }
-        if(z.compareTo(max) > 0)
-        {
-            max = z;
+        if (z.compareTo(max) > 0) {
+            max = z;  // z is the new maximum
         }
 
         return max;
